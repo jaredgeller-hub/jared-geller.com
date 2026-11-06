@@ -1,0 +1,362 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Jared Geller</title>
+<meta name="description" content="Jared Geller: customer success leader and product builder in Chicago. Career, CS Agent, Get Untethered and Barry Gets Laid Off.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+  /* Layout: single reading column; on wide screens each section label sits in a left rail, like the account-plan docs a CSM lives in. */
+  :root {
+    --bg: #f4f6f7;
+    --surface: #ffffff;
+    --fg: #15212b;
+    --muted: #586673;
+    --line: #d9e0e4;
+    --accent: #1f6b5a;
+    --accent-soft: #e2efeb;
+    --amber: #8a5a00;
+    --amber-soft: #f7ecd6;
+    --font-display: "Inter Tight", "Helvetica Neue", Arial, system-ui, sans-serif;
+    --font-body: "Inter", "Helvetica Neue", Arial, system-ui, sans-serif;
+    --font-mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #0e151b; --surface: #151f27; --fg: #e5ebee; --muted: #97a6b1; --line: #26343f;
+      --accent: #74c7ae; --accent-soft: #17302a; --amber: #e8b75a; --amber-soft: #33270f;
+      color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #0e151b; --surface: #151f27; --fg: #e5ebee; --muted: #97a6b1; --line: #26343f;
+    --accent: #74c7ae; --accent-soft: #17302a; --amber: #e8b75a; --amber-soft: #33270f;
+    color-scheme: dark;
+  }
+
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--fg);
+    font-family: var(--font-body);
+    font-size: 17px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: var(--accent); text-underline-offset: 3px; }
+  a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 4px; }
+
+  .wrap {
+    max-width: 1040px;
+    margin: 0 auto;
+    padding-left: max(16px, env(safe-area-inset-left, 0px));
+    padding-right: max(16px, env(safe-area-inset-right, 0px));
+  }
+
+  /* Top bar */
+  .topbar { border-bottom: 1px solid var(--line); }
+  .topbar .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding-block: 14px; flex-wrap: wrap; }
+  .mark { font-family: var(--font-display); font-weight: 700; font-size: 1.05rem; letter-spacing: -0.01em; color: var(--fg); text-decoration: none; }
+  .nav { display: flex; gap: 18px; flex-wrap: wrap; font-size: 0.92rem; }
+  .nav a { color: var(--muted); text-decoration: none; }
+  .nav a:hover { color: var(--fg); }
+
+  /* Draft placeholder styling */
+  .ph {
+    display: inline-block;
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--amber);
+    background: var(--amber-soft);
+    padding: 2px 8px;
+    border-radius: 4px;
+    vertical-align: middle;
+  }
+
+  /* Hero */
+  .hero .wrap { padding-block: 72px 64px; display: grid; grid-template-columns: 1fr auto; gap: 32px; align-items: end; }
+  .eyebrow { font-family: var(--font-mono); font-size: 0.8rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); margin: 0 0 18px; }
+  h1 {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: clamp(2.4rem, 6.4vw, 4.2rem);
+    line-height: 1.05;
+    letter-spacing: -0.03em;
+    margin: 0 0 22px;
+    text-wrap: balance;
+  }
+  h1 .hl { color: var(--accent); }
+  .lede { font-size: 1.2rem; max-width: 34em; color: var(--fg); margin: 0; }
+  .lede + .lede { margin-top: 12px; color: var(--muted); font-size: 1.05rem; }
+  .portrait {
+    display: block;
+    width: 168px; height: auto; aspect-ratio: 1; max-width: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    background: var(--surface);
+    box-shadow: 0 0 0 4px var(--surface), 0 0 0 5px var(--line);
+  }
+
+  /* Proof strip */
+  .proof { border-block: 1px solid var(--line); background: var(--surface); }
+  .proof .wrap { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 24px; padding-block: 26px; }
+  .stat b { display: block; font-family: var(--font-display); font-weight: 600; font-size: 2rem; line-height: 1.1; letter-spacing: -0.02em; font-variant-numeric: tabular-nums; }
+  .stat span { display: block; font-size: 0.88rem; color: var(--muted); margin-top: 4px; line-height: 1.4; }
+
+  /* Sections */
+  section.block .wrap { display: grid; grid-template-columns: 200px minmax(0, 1fr); gap: 40px; padding-block: 64px; }
+  section.block + section.block .wrap { border-top: 1px solid var(--line); }
+  .label { font-family: var(--font-mono); font-size: 0.8rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); margin: 6px 0 0; }
+  h2 { font-family: var(--font-display); font-size: clamp(1.6rem, 3.4vw, 2.2rem); line-height: 1.15; letter-spacing: -0.02em; margin: 0 0 18px; text-wrap: balance; }
+  .prose p { margin: 0 0 14px; max-width: 38em; }
+  .prose p:last-child { margin-bottom: 0; }
+
+  /* Career timeline */
+  .roles { list-style: none; margin: 8px 0 0; padding: 0; display: grid; gap: 0; }
+  .role { display: grid; grid-template-columns: 150px minmax(0, 1fr); gap: 20px; padding-block: 20px; border-top: 1px solid var(--line); }
+  .role:first-child { border-top: 0; padding-top: 4px; }
+  .when { font-family: var(--font-mono); font-size: 0.82rem; color: var(--muted); padding-top: 3px; font-variant-numeric: tabular-nums; }
+  .role h3 { margin: 0; font-size: 1.06rem; font-weight: 600; }
+  .role .co { color: var(--muted); font-weight: 500; }
+  .role p { margin: 6px 0 0; color: var(--fg); max-width: 40em; }
+  .role .note { display: inline-block; margin-top: 10px; font-size: 0.86rem; color: var(--accent); background: var(--accent-soft); padding: 4px 10px; border-radius: 6px; }
+
+  /* Projects */
+  .projects { display: grid; gap: 18px; margin-top: 8px; }
+  .project {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 24px;
+    display: grid;
+    gap: 10px;
+  }
+  .project-head { display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+  .project h3 { font-family: var(--font-display); font-size: 1.45rem; letter-spacing: -0.015em; margin: 0; }
+  .status { font-family: var(--font-mono); font-size: 0.74rem; letter-spacing: 0.04em; text-transform: uppercase; padding: 3px 9px; border-radius: 999px; border: 1px solid currentColor; white-space: nowrap; }
+  .status.live { color: var(--accent); }
+  .status.soon { color: var(--amber); }
+  .tagline { font-size: 1.06rem; font-weight: 500; margin: 0; }
+  .project p { margin: 0; max-width: 40em; }
+  .project .meta { font-size: 0.9rem; color: var(--muted); }
+  .links { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 6px; align-items: center; }
+  .btn {
+    display: inline-flex; align-items: center; gap: 6px;
+    font-size: 0.92rem; font-weight: 600;
+    padding: 8px 14px; border-radius: 8px;
+    border: 1px solid var(--line);
+    color: var(--fg); text-decoration: none; background: var(--bg);
+  }
+  .btn:hover { border-color: var(--accent); color: var(--accent); }
+  .quote { font-family: var(--font-display); font-size: 1.15rem; font-weight: 500; color: var(--accent); margin: 4px 0 0; }
+
+  .project.book { grid-template-columns: minmax(0, 1fr) 160px; gap: 24px; align-items: start; }
+  .book-side { display: flex; flex-direction: column; align-items: flex-end; gap: 14px; }
+  .book-body { display: grid; gap: 10px; min-width: 0; }
+  .cover-link { display: block; line-height: 0; }
+  .cover {
+    display: block; width: 150px; height: auto; max-width: 100%; aspect-ratio: 1;
+    border-radius: 3px 6px 6px 3px;
+    object-fit: cover;
+    box-shadow: 0 1px 0 var(--line), 0 8px 20px rgba(0, 0, 0, 0.16);
+  }
+  .cover { width: 160px; }
+  @media (max-width: 520px) { .project.book { grid-template-columns: 1fr; } .book-side { align-items: flex-start; } }
+
+  /* Contact */
+  .contact-list { list-style: none; padding: 0; margin: 4px 0 0; display: grid; gap: 12px; }
+  .contact-list li { display: flex; gap: 12px; align-items: baseline; flex-wrap: wrap; }
+  .contact-list .k { font-family: var(--font-mono); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--muted); width: 90px; }
+
+  footer { border-top: 1px solid var(--line); }
+  footer .wrap { padding-block: 28px; font-size: 0.86rem; color: var(--muted); display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+
+  @media (max-width: 760px) {
+    .hero .wrap { grid-template-columns: 1fr; padding-block: 44px 40px; }
+    .portrait { width: 112px; order: -1; }
+    .proof .wrap { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    section.block .wrap { grid-template-columns: 1fr; gap: 10px; padding-block: 44px; }
+    .role { grid-template-columns: 1fr; gap: 4px; }
+    .nav { gap: 14px; }
+  }
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="wrap">
+    <a class="mark" href="#top">Jared Geller</a>
+    <nav class="nav" aria-label="Sections">
+      <a href="#about">About</a>
+      <a href="#career">Career</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="wrap">
+      <div>
+        <p class="eyebrow">Customer success · Product builder · Chicago</p>
+        <h1>I help customers get value from software, and lately I <span class="hl">build the software</span> too.</h1>
+        <p class="lede">Ten years in customer success at companies like Zendesk, Miro and Gainsight. Now I design and ship AI tools for the people doing that work.</p>
+      </div>
+      <img class="portrait" src="assets/headshot.jpg" alt="Jared Geller" width="168" height="168">
+    </div>
+  </section>
+
+  <section class="block" id="about">
+    <div class="wrap">
+      <p class="label">About</p>
+      <div class="prose">
+        <h2>A CSM who thinks like a product lead</h2>
+        <p>I've spent my career on the customer side of B2B software: running enterprise books of business, leading QBRs with executive sponsors, and turning what customers tell me into product feedback that actually lands.</p>
+        <p>Along the way I started building. I helped customers design and launch AI agents at Zendesk, and on my own time I've shipped an AI assistant for CSMs, a browser extension, and a book. I like taking an idea from a rough sketch to something people can use.</p>
+        <p>I'm open to customer success roles and to work on innovation teams, where understanding customers and building for them are the same job.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="career">
+    <div class="wrap">
+      <p class="label">Career</p>
+      <div>
+        <h2>Where I've worked</h2>
+        <ol class="roles">
+          <li class="role">
+            <div class="when">2025 – 2026</div>
+            <div>
+              <h3>Customer Success Manager <span class="co">· Zendesk</span></h3>
+              <p>Managed 35 enterprise accounts worth $5.5M with 93% retention, and drove $500K in expansion in my first eight months. Helped customers design and build AI agents, from API integrations to workflow setup.</p>
+              <span class="note">For a global events brand: an agentic AI bot that cut event-day support requests by about 70% and drove add-on sales.</span>
+            </div>
+          </li>
+          <li class="role">
+            <div class="when">2023 – 2024</div>
+            <div>
+              <h3>Strategic Customer Success Manager <span class="co">· Miro</span></h3>
+              <p>Built success plans with C-suite sponsors, held 90% retention and lifted engagement and AI adoption by 25% across top accounts.</p>
+            </div>
+          </li>
+          <li class="role">
+            <div class="when">2022 – 2023</div>
+            <div>
+              <h3>Sr. Value Consultant <span class="co">· Gainsight</span></h3>
+              <p>Ran value workshops across 12+ enterprise projects a year and redesigned customer workflows for a 25% efficiency gain.</p>
+            </div>
+          </li>
+          <li class="role">
+            <div class="when">2021 – 2022</div>
+            <div>
+              <h3>Sr. Customer Success Manager <span class="co">· Tealium</span></h3>
+              <p>Guided advanced implementations across web and mobile, growing monthly recurring revenue by 20%.</p>
+            </div>
+          </li>
+          <li class="role">
+            <div class="when">2019 – 2021</div>
+            <div>
+              <h3>Consulting Manager <span class="co">· Egencia (Expedia Group)</span></h3>
+              <p>Used travel data to restructure corporate travel programs, cutting client program costs by 25%.</p>
+            </div>
+          </li>
+          <li class="role">
+            <div class="when">2015 – 2019</div>
+            <div>
+              <h3>Director of Operational Efficiency, and Assistant Account Management Director <span class="co">· Flight Centre Travel Group</span></h3>
+              <p>Held 98% client retention, launched a self-service reporting platform, and mentored account managers into front-line leaders.</p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="projects">
+    <div class="wrap">
+      <p class="label">Projects</p>
+      <div>
+        <h2>Things I'm building</h2>
+        <div class="projects">
+
+          <article class="project">
+            <div class="project-head">
+              <h3>CS Agent</h3>
+              <span class="status live">Source-available</span>
+            </div>
+            <p class="tagline">An AI assistant for customer success managers, built by a CSM for CSMs.</p>
+            <p>It reads across the tools a CSM already works in, surfaces the accounts that need attention each morning, and drafts the follow-up so you can spend your time on the conversation instead of the prep.</p>
+            <p class="quote">It drafts. You approve. Always.</p>
+            <p class="meta">Work in progress with a public roadmap. Released under Alwaison.</p>
+            <div class="links">
+              <a class="btn" href="https://github.com/jaredgeller-hub/cs-agent-app" target="_blank" rel="noopener">Code and demo video on GitHub</a>
+            </div>
+          </article>
+
+          <article class="project">
+            <div class="project-head">
+              <h3>Get Untethered</h3>
+              <span class="status live">Chrome extension</span>
+            </div>
+            <p class="tagline">See a company's federal tax picture while you browse its website.</p>
+            <p>A browser extension and site that pull public SEC filings for more than 250 large companies and put the numbers in context, with a simple way to contact your representative. It's a flashlight, not a receipt: it shows the public data and leaves the judgment to you.</p>
+            <p class="meta">A passion project I built and maintain on my own.</p>
+            <div class="links">
+              <a class="btn" href="https://getuntethered.ai/" target="_blank" rel="noopener">Visit Get Untethered</a>
+            </div>
+          </article>
+
+          <article class="project book">
+            <div class="book-body">
+              <h3>Barry Gets Laid Off</h3>
+            <p class="tagline">A picture book for adults about life in tech.</p>
+            <p>Barry is a loyal employee who keeps getting restructured. It looks like a bedtime story and reads like every reorg you've lived through. A print book, made to be given as a gift.</p>
+            <p class="meta">Available in print on Amazon.</p>
+            <div class="links">
+              <a class="btn" href="https://www.amazon.com/dp/B0HQMND12P" target="_blank" rel="noopener">Get it on Amazon</a>
+            </div>
+            </div>
+            <div class="book-side">
+              <span class="status live">On Amazon</span>
+              <a href="https://www.amazon.com/dp/B0HQMND12P" target="_blank" rel="noopener" class="cover-link"><img class="cover" src="assets/barry-cover.jpg" alt="Cover of Barry Gets Laid Off: a cartoon beaver in a hard hat carrying a box of desk things" width="600" height="600"></a>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="contact">
+    <div class="wrap">
+      <p class="label">Contact</p>
+      <div class="prose">
+        <h2>Let's talk</h2>
+        <p>Hiring for customer success or an innovation team, or want to try CS Agent with your team? Email or LinkedIn both reach me.</p>
+        <ul class="contact-list">
+          <li><span class="k">Email</span><a href="mailto:hello@jared-geller.com">hello@jared-geller.com</a></li>
+          <li><span class="k">LinkedIn</span><a href="https://www.linkedin.com/in/jared-geller" target="_blank" rel="noopener">linkedin.com/in/jared-geller</a></li>
+          <li><span class="k">GitHub</span><a href="https://github.com/jaredgeller-hub" target="_blank" rel="noopener">github.com/jaredgeller-hub</a></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 Jared Geller</span>
+    <span>Chicago, IL</span>
+  </div>
+</footer>
+</body>
+</html>
