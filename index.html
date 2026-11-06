@@ -22,7 +22,6 @@
     --accent-strong: #1f4a3a;
     --accent-soft: #e9f2ee;
     --media: #e9f2ee;
-    --media-alt: #eef0f3;
     --media-book: #f3efe6;
     --font-display: "Inter Tight", "Helvetica Neue", Arial, system-ui, sans-serif;
     --font-body: "Inter", "Helvetica Neue", Arial, system-ui, sans-serif;
@@ -33,7 +32,7 @@
       --bg: #0e151b; --surface: #151f27; --fg: #e5ebee; --body: #c9d3d9; --muted: #97a6b1;
       --line: #26343f; --rail: #2c3b46; --dot: #5d6e7a;
       --accent: #74c7ae; --accent-strong: #9adbc6; --accent-soft: #17302a;
-      --media: #17302a; --media-alt: #1b2731; --media-book: #2a261e;
+      --media: #17302a; --media-book: #2a261e;
       color-scheme: dark;
     }
   }
@@ -103,8 +102,10 @@
   .card-media { height: 190px; display: flex; align-items: center; justify-content: center; background: var(--media); }
   .card-media.book { background: var(--media-book); }
   .card-media .cover { width: 150px; height: 150px; border-radius: 4px; box-shadow: 0 8px 18px rgba(21, 33, 43, 0.18); }
-  .card-media .mark { font-family: var(--font-display); font-weight: 700; font-size: 28px; letter-spacing: -0.02em; color: var(--accent); }
-  .card-media.alt { background: var(--media-alt); }
+  .card-media.logo { background: #ffffff; border-bottom: 1px solid var(--line); }
+  .card-media .wordmark { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; font-weight: 700; font-size: 34px; letter-spacing: -0.01em; color: #000000; }
+  .card-media.night { background: #14110f; }
+  .card-media .flashlight { width: 120px; height: 120px; }
   .card-body { padding: 26px; display: flex; flex-direction: column; gap: 12px; flex: 1; }
   .card-title { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 8px; }
   .card h3 { font-weight: 700; font-size: 22px; }
@@ -266,7 +267,7 @@
       </div>
       <div class="projects">
         <article class="card">
-          <div class="card-media" aria-hidden="true"><span class="mark">CS Agent</span></div>
+          <div class="card-media logo" aria-hidden="true"><span class="wordmark">CS AGENT</span></div>
           <div class="card-body">
             <div class="card-title"><h3>CS Agent</h3><span class="tag">SOURCE-AVAILABLE</span></div>
             <p class="summary">An AI assistant for customer success managers, built by a CSM for CSMs.</p>
@@ -276,7 +277,7 @@
           </div>
         </article>
         <article class="card">
-          <div class="card-media alt" aria-hidden="true"><span class="mark">Get Untethered</span></div>
+          <div class="card-media night" aria-hidden="true"><svg class="flashlight" viewBox="0 0 80 80"><polygon points="18,62 48,10 70,32" fill="#f2ede6"/><circle cx="18" cy="62" r="9" fill="#f2ede6"/></svg></div>
           <div class="card-body">
             <div class="card-title"><h3>Get Untethered</h3><span class="tag">CHROME EXTENSION</span></div>
             <p class="summary">See a company's federal tax picture while you browse its website.</p>
