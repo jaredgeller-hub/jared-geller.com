@@ -187,6 +187,33 @@
     .role { grid-template-columns: 1fr; gap: 4px; }
     .nav { gap: 14px; }
   }
+  /* Wide screens: use more of the width, slightly larger type */
+  @media (min-width: 1000px) {
+    body { font-size: 18px; }
+    .wrap { max-width: 1160px; padding-left: max(32px, env(safe-area-inset-left, 0px)); padding-right: max(32px, env(safe-area-inset-right, 0px)); }
+    .hero .wrap { padding-block: 88px 76px; gap: 48px; }
+    h1 { font-size: 4.6rem; }
+    .lede { font-size: 1.3rem; max-width: 36em; }
+    .portrait { width: 200px; }
+    section.block .wrap { grid-template-columns: 220px minmax(0, 1fr); gap: 56px; padding-block: 80px; }
+    h2 { font-size: 2.4rem; }
+    .prose p, .role p, .project p { max-width: 46em; }
+    .role { grid-template-columns: 170px minmax(0, 1fr); gap: 28px; padding-block: 24px; }
+    .projects { gap: 22px; }
+    .project { padding: 30px; }
+    .project h3 { font-size: 1.6rem; }
+    .project.book { grid-template-columns: minmax(0, 1fr) 190px; gap: 32px; }
+    .cover { width: 190px; }
+  }
+  @media (min-width: 1440px) {
+    body { font-size: 19px; }
+    .wrap { max-width: 1300px; }
+    h1 { font-size: 5.4rem; }
+    .portrait { width: 240px; }
+    section.block .wrap { grid-template-columns: 260px minmax(0, 1fr); gap: 72px; }
+    .project.book { grid-template-columns: minmax(0, 1fr) 210px; }
+    .cover { width: 210px; }
+  }
 </style>
 </head>
 <body>
