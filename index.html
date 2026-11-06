@@ -214,6 +214,16 @@
     .project.book { grid-template-columns: minmax(0, 1fr) 210px; }
     .cover { width: 210px; }
   }
+  /* Hero */
+  .hero-a .wrap { padding-block: 56px 64px; }
+  .hero-a .wrap { display: block; }
+  .h1-calm { font-size: clamp(2.1rem, 4.6vw, 3.4rem); line-height: 1.12; letter-spacing: -0.015em; max-width: 19em; }
+  .hero-a .lede { font-size: 1.2rem; max-width: 38em; color: var(--muted); }
+  .portrait-a { display: block; width: 132px; height: 132px; border-radius: 50%; object-fit: cover; margin: 0 0 28px; box-shadow: 0 0 0 4px var(--surface), 0 0 0 5px var(--line); }
+  @media (max-width: 760px) {
+    .hero-a .wrap { padding-block: 36px 40px; }
+        .portrait-a { width: 104px; height: 104px; }
+  }
 </style>
 </head>
 <body>
@@ -231,14 +241,12 @@
 </header>
 
 <main id="top">
-  <section class="hero">
+  <section class="hero hero-a">
     <div class="wrap">
-      <div>
-        <p class="eyebrow">Customer success · Product builder · Chicago</p>
-        <h1>I help customers get value from software, and lately I <span class="hl">build the software</span> too.</h1>
-        <p class="lede">Ten years in customer success at companies like Zendesk, Miro and Gainsight. Now I design and ship AI tools for the people doing that work.</p>
-      </div>
-      <img class="portrait" src="assets/headshot.jpg" alt="Jared Geller" width="168" height="168">
+      <img class="portrait-a" src="assets/headshot.jpg" alt="Jared Geller" width="132" height="132">
+      <p class="eyebrow">Customer success · Product builder · Chicago</p>
+      <h1 class="h1-calm">I help customers get value from software, and lately I <span class="hl">build the software</span> too.</h1>
+      <p class="lede">Customer success at Zendesk, Miro and Gainsight. Now I design and ship AI tools for the people doing that work.</p>
     </div>
   </section>
 
@@ -247,7 +255,7 @@
       <p class="label">About</p>
       <div class="prose">
         <h2>A CSM who thinks like a product lead</h2>
-        <p>I've spent my career on the customer side of B2B software: running enterprise books of business, leading QBRs with executive sponsors, and turning what customers tell me into product feedback that actually lands.</p>
+        <p>I came to customer success from corporate travel, where I ran client accounts and coached account managers into their first leadership roles. Since then I've worked with enterprise customers at Gainsight, Miro and Zendesk, leading QBRs with executive sponsors and turning what customers tell me into product feedback that lands.</p>
         <p>Along the way I started building. I helped customers design and launch AI agents at Zendesk, and on my own time I've shipped an AI assistant for CSMs, a browser extension, and a book. I like taking an idea from a rough sketch to something people can use.</p>
         <p>I'm open to customer success roles and to work on innovation teams, where understanding customers and building for them are the same job.</p>
       </div>
