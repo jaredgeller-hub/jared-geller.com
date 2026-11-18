@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Jared Geller</title>
-<meta name="description" content="Jared Geller: customer success leader and product builder in Chicago. Career, CS Agent, Get Untethered and Barry Gets Laid Off.">
+<meta name="description" content="Jared Geller: Enterprise Customer Success Manager in Chicago. Strategic accounts, retention and expansion, and AI adoption at Zendesk, Miro and Gainsight.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
@@ -98,7 +98,7 @@
   .highlight strong { font-weight: 600; }
 
   /* Projects */
-  .projects { display: grid; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); gap: 24px; }
+  .projects { display: grid; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); gap: 24px; max-width: 560px; }
   .card { border: 1px solid var(--line); border-radius: 18px; overflow: hidden; display: flex; flex-direction: column; background: var(--surface); }
   .card-media { height: 190px; display: flex; align-items: center; justify-content: center; background: var(--media); }
   .card-media.book { background: var(--media-book); }
@@ -151,7 +151,7 @@
     <ul>
       <li><a href="#about">About</a></li>
       <li><a href="#career">Career</a></li>
-      <li><a href="#projects">Projects</a></li>
+      <li><a href="#projects">Side project</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
   </nav>
@@ -162,8 +162,8 @@
     <img class="portrait" src="assets/headshot.jpg" alt="Jared Geller" width="240" height="280">
     <div class="hero-copy">
       <h1>Jared Geller</h1>
-      <p class="tagline">Customer success leader with a passion for building</p>
-      <p class="lede">Customer success at Zendesk, Miro and Gainsight. Now I design and ship AI tools for the people doing that work.</p>
+      <p class="tagline">Enterprise Customer Success Manager</p>
+      <p class="lede">I manage strategic enterprise accounts and grow them, most recently a $10.8M ARR book at Zendesk. I also help customers put AI to work in their support operations.</p>
       <p class="quick-links">
         <a href="mailto:hello@jared-geller.com">Email</a>
         <a href="https://www.linkedin.com/in/jared-geller" target="_blank" rel="noopener">LinkedIn</a>
@@ -177,13 +177,13 @@
       <div class="about-copy">
         <h2 class="eyebrow">About</h2>
         <p>I came to customer success from corporate travel, where I ran client accounts and coached account managers into their first leadership roles. Since then I've worked with enterprise customers at Gainsight, Miro and Zendesk, leading QBRs with executive sponsors and turning what customers tell me into product feedback that lands.</p>
-        <p>Along the way I started building. I helped customers design and launch AI agents at Zendesk, and on my own time I've shipped an AI assistant for CSMs, a browser extension, and a book. I like taking an idea from a rough sketch to something people can use.</p>
-        <p>I'm open to customer success roles and to work on innovation teams, where understanding customers and building for them are the same job.</p>
+        <p>I'm hands-on with the product. At Zendesk I helped customers design and launch AI agents, from API integrations to workflow setup. On my own time I built CS Agent, an AI assistant for CSMs, because I wanted a better way to prep for my own accounts.</p>
+        <p>I'm open to Enterprise and Strategic Customer Success roles.</p>
       </div>
       <dl class="glance" aria-label="At a glance">
         <div><dt>Based in</dt><dd>Chicago, IL</dd></div>
-        <div><dt>Building</dt><dd>CS Agent, an AI assistant for CSMs</dd></div>
-        <div><dt>Open to</dt><dd>Customer success roles and innovation teams</dd></div>
+        <div><dt>Focus</dt><dd>Enterprise accounts, retention, expansion and AI adoption</dd></div>
+        <div><dt>Open to</dt><dd>Enterprise and Strategic CSM roles</dd></div>
         <div><dt>Previously</dt><dd>Zendesk, Miro, Gainsight, Tealium, Egencia, Flight Centre</dd></div>
       </dl>
     </div>
@@ -202,7 +202,7 @@
           <span class="dates-inline">2025 – 2026</span>
           <h3>Zendesk</h3>
           <span class="role">Customer Success Manager</span>
-          <p>Managed 35 enterprise accounts worth $5.5M with 93% retention, and drove $500K in expansion in my first eight months. Helped customers design and build AI agents, from API integrations to workflow setup.</p>
+          <p>Managed a strategic book of 35 enterprise accounts that grew from $5.5M to $10.8M ARR, with 114% net revenue retention, 93% logo retention and $800K in expansion in my first year. Helped customers design and build AI agents, from API integrations to workflow setup.</p>
           <p class="highlight"><strong>Highlight:</strong> for a global events brand, an agentic AI bot that cut event-day support requests by about 70% and drove add-on sales.</p>
         </div>
       </li>
@@ -262,8 +262,8 @@
   <section id="projects" class="band">
     <div class="wrap section">
       <div class="section-head">
-        <p class="eyebrow">Projects</p>
-        <h2>Things I'm building</h2>
+        <p class="eyebrow">Side project</p>
+        <h2>What I built for my own work</h2>
       </div>
       <div class="projects">
         <article class="card">
@@ -276,26 +276,6 @@
             <a class="cta" href="https://github.com/jaredgeller-hub/cs-agent-app" target="_blank" rel="noopener">Code and demo video on GitHub →</a>
           </div>
         </article>
-        <article class="card">
-          <div class="card-media night" aria-hidden="true"><svg class="flashlight" viewBox="0 0 80 80"><polygon points="18,62 48,10 70,32" fill="#f2ede6"/><circle cx="18" cy="62" r="9" fill="#f2ede6"/></svg></div>
-          <div class="card-body">
-            <div class="card-title"><h3>Get Untethered</h3><span class="tag">CHROME EXTENSION</span></div>
-            <p class="summary">See a company's federal tax picture while you browse its website.</p>
-            <p class="detail">A browser extension and site that pull public SEC filings for more than 250 large companies and put the numbers in context, with a simple way to contact your representative. It's a flashlight, not a receipt.</p>
-            <a class="cta" href="https://getuntethered.ai/" target="_blank" rel="noopener">Visit Get Untethered →</a>
-          </div>
-        </article>
-        <article class="card">
-          <div class="card-media book">
-            <a href="https://www.amazon.com/dp/B0HQMND12P" target="_blank" rel="noopener"><img class="cover" src="assets/barry-cover.jpg" alt="Cover of Barry Gets Laid Off: a cartoon beaver in a hard hat carrying a box of desk things" width="150" height="150"></a>
-          </div>
-          <div class="card-body">
-            <div class="card-title"><h3>Barry Gets Laid Off</h3><span class="tag">BOOK</span></div>
-            <p class="summary">A picture book for adults about life in tech.</p>
-            <p class="detail">Barry is a loyal employee who keeps getting restructured. It looks like a bedtime story and reads like every reorg you've lived through. A print book, made to be given as a gift.</p>
-            <a class="cta" href="https://www.amazon.com/dp/B0HQMND12P" target="_blank" rel="noopener">Get it on Amazon →</a>
-          </div>
-        </article>
       </div>
     </div>
   </section>
@@ -304,7 +284,7 @@
     <div class="contact-copy">
       <p class="eyebrow">Contact</p>
       <h2>Let's talk</h2>
-      <p>Hiring for customer success or an innovation team, or want to try CS Agent with your team? Email or LinkedIn both reach me.</p>
+      <p>Hiring for an Enterprise or Strategic CSM role? Email or LinkedIn both reach me.</p>
     </div>
     <ul class="contact-links">
       <li><a href="mailto:hello@jared-geller.com"><span class="label">EMAIL</span><span class="value">hello@jared-geller.com →</span></a></li>
